@@ -10,7 +10,7 @@ Professional Website for Tech Porfolio
 ## Website Demo
 
 Here's a video / GIF that demos all of the app's implemented features:
-
+https://i.imgur.com/PowWIpA.gif
 <img src='https://i.imgur.com/PowWIpA.gif' title='Website Demo' width='' alt='Website Demo' />
 
 ## Pages
