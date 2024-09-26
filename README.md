@@ -12,6 +12,7 @@ Professional Website for Tech Porfolio
 Here's a video / GIF that demos all of the app's implemented features:
 
 ![Alt Text]([link]https://i.imgur.com/PowWIpA.gif)
+![img desc](https://i.imgur.com/PowWIpA.mp4)
 <img src='https://i.imgur.com/PowWIpA.mp4' title='Video Demo' width='' alt='Video Demo' />
 
 ## Pages
