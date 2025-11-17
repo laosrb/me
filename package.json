@@ -1,6 +1,7 @@
 {
   "name": "portfolio-app",
   "version": "1.0.0",
+  "type": "module",
   "homepage": "https://laosrb.github.io/me",
   "scripts": {
     "dev": "vite",
