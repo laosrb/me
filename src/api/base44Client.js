@@ -38,7 +38,7 @@ const mockBase44 = {
           {
             id: 3,
             role: "Network Engineer Intern",
-            company: "Tech Corp",
+            company: "Emory University Hospital",
             type: "internship",
             start_date: "2024-06-03",
             end_date: "2024-08-23",
