@@ -1,0 +1,128 @@
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { createPageUrl } from "@/utils";
+import { motion } from "framer-motion";
+import { ChevronDown } from "lucide-react";
+
+const languages = [
+  { text: "hello", lang: "English" },
+  { text: "你好", lang: "Chinese (Mandarin)" },
+  { text: "こんにちは", lang: "Japanese" },
+  { text: "bonjour", lang: "French" },
+  { text: "hola", lang: "Spanish" }
+];
+
+export default function Home() {
+  const [currentLang, setCurrentLang] = useState(0);
+  const [showTooltip, setShowTooltip] = useState(false);
+  const [activeTab, setActiveTab] = useState("experience");
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentLang((prev) => (prev + 1) % languages.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setIsVisible(scrollPosition > 200);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <div className="min-h-screen">
+      {/* Section 1: Hello */}
+      <section className="h-screen flex items-center justify-center relative bg-gradient-to-br from-gray-50 to-gray-100">
+        <motion.div
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-center"
+          onMouseEnter={() => setShowTooltip(true)}
+          onMouseLeave={() => setShowTooltip(false)}
+        >
+          <motion.h1
+            key={currentLang}
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -20, opacity: 0 }}
+            className="text-8xl md:text-9xl font-bold text-gray-900 cursor-pointer relative"
+          >
+            {languages[currentLang].text}
+          </motion.h1>
+          
+          {showTooltip && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mt-8 text-lg text-gray-600"
+            >
+              {languages[currentLang].lang}
+            </motion.div>
+          )}
+        </motion.div>
+
+        {/* Scroll indicator */}
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ repeat: Infinity, duration: 1.5 }}
+          className="absolute bottom-12 left-1/2 transform -translate-x-1/2"
+        >
+          <ChevronDown className="w-8 h-8 text-gray-400" />
+        </motion.div>
+      </section>
+
+      {/* Section 2: Portfolio Info */}
+      <section className="min-h-screen py-20 px-6">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-5xl font-bold text-gray-900 mb-4">ryan.j.bouapheng</h2>
+            <p className="text-xl text-gray-600 leading-relaxed mb-12">
+              I am a Computer Science student at Georgia State University with a strong
+              foundation in Python, JavaScript, and Kotlin. My roles as a Python instructor and
+              network engineer intern have sharpened my technical skills and communication
+              abilities. This website showcases my experience and projects, highlighting my
+              growth in full-stack development and leadership in team initiatives.
+            </p>
+
+            {/* Tabs */}
+            <div className="flex gap-4 mb-8 justify-center flex-wrap">
+              {[
+                { id: "experience", label: "[xp]", path: "Experience" },
+                { id: "resume", label: "[resume]", path: "Resume" },
+                { id: "me", label: "[me]", path: "AboutMe" }
+              ].map((tab) => (
+                <Link
+                  key={tab.id}
+                  to={createPageUrl(tab.path)}
+                  className="relative group"
+                >
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="text-3xl md:text-4xl font-bold text-gray-900 cursor-pointer px-8 py-4 rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all"
+                  >
+                    {tab.label}
+                    <motion.div
+                      className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-10 transition-opacity"
+                    />
+                  </motion.div>
+                </Link>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    </div>
+  );
+}
