@@ -5,13 +5,13 @@ Created by Ryan Bouapheng
 
 ## Upcoming Features: (2025)
 - **Update Bio**: Use most current information for Home/Experience/AboutMe page
-- **Add Website Icon**
 - **Add Photos in About Me Page and Home Page**:
 - **Add More Projects**: Learn Japanese, Mobile Apps
 - **Light & Dark Mode**
 - **Allow Resume Download Button**
 - **Add clickable links for projects**
 - **Add Search Filter for jobs**
+
 
 ## Advanced Features: (~2026)
 - **Create API for Pages**: Allows admin/users access
