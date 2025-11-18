@@ -3,21 +3,25 @@
 A modern React portfolio application built with Vite, React Router, and Tailwind CSS.
 Created by Ryan Bouapheng
 
-## Upcoming Features: (2025)
-- **Update Bio**: Use most current information for Home/Experience/AboutMe page
-- **Add Photos in About Me Page and Home Page**:
+## Upcoming Features: (2025) [ensure data accuracy, fix site issues, improve accessibility]
+
+- **Update Bio**: Update current information for Home/Experience/AboutMe page
+- **Add Photos in About Me Page and Home Page**: Add professional headshots
 - **Add More Projects**: Learn Japanese, Mobile Apps
 - **Light & Dark Mode**
 - **Allow Resume Download Button**
 - **Add clickable links for projects**
 - **Add Search Filter for jobs**
+- **Fix Contact Me Card**
 
 
-## Advanced Features: (~2026)
+## Advanced Features: (~2026) [improve features & add personality]
+
 - **Create API for Pages**: Allows admin/users access
 - **Improve blog card => Blog Page**: users can like/post/comment (after reviewed by admin) and admins can post pictures/videos/text/audio for post
-- **Add Promo Video**
-- **Add AI chat bot**
+- **Add Promo Video**: Shows footage of me coding, exercising, publicly speaking, leading, hobbies, family (drag down to see video)
+- **Add Life Card**: Showcases life outside of school (surf, run, ski, etc.)
+- **Add AI Chatbot**: User can ask chatbot questions about professional experience and website
 - **Create blog website**
 
 ## Features
