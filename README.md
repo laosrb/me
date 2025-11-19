@@ -9,7 +9,7 @@ Created by Ryan Bouapheng
 - **Add Photos in About Me Page and Home Page**: Add professional headshots
 - **Add More Projects**: Learn Japanese, Mobile Apps
 - **Light & Dark Mode**
-- **Allow Resume Download Button**
+- **Fix Resume Download Button**
 - **Add clickable links for projects**
 - **Add Search Filter for jobs**
 - **Fix Contact Me Card**
@@ -26,12 +26,12 @@ Created by Ryan Bouapheng
 
 ## Features
 
-- **Home Page**: Animated greeting in multiple languages with portfolio overview
+- **Home Page**: Animated greeting in multiple languages I can speak with portfolio overview
 - **Experience Page**: Showcase of work experience, projects, and internships with filtering
 - **Resume Page**: Professional summary and resume download
 - **About Me Page**: Collapsible sections for bio, blog, bucket list, and contact information
 
-## Getting Started
+## Getting Started (locally)
 
 ### Prerequisites
 
@@ -66,7 +66,7 @@ Preview the production build:
 npm run preview
 ```
 
-## Project Structure
+## Website Architecture
 
 ```
 ├── src/
@@ -131,7 +131,7 @@ The application includes:
 
 ## Notes
 
-- The API client (`src/api/base44Client.js`) is currently a mock implementation for local development. Replace it with your actual API client when ready.
+- The API client (`src/api/base44Client.js`) is currently a mock implementation for local development. Replace it with actual API client when ready.
 - Update resume URL in `src/Pages/Resume.jsx` when you have your resume file.
 - Customize contact information in `src/components/about/ContactSection.jsx` and `src/Layout.jsx`.
 
