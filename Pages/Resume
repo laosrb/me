@@ -4,7 +4,7 @@ import { FileText, Download, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Resume() {
-  const resumeUrl = "https://laosrb.github.io/resume/Ryan_Bouapheng_Resume(SWE).pdf"; // Update with actual resume URL
+  const resumeUrl = "https://laosrb.github.io/resume"; // Update with actual resume URL
 
   return (
     <div className="min-h-screen py-20 px-6">
