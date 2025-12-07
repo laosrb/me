@@ -19,6 +19,7 @@ Created by Ryan Bouapheng
 
 - **Create API for Pages**: Allows admin/users access
 - **Improve blog card => Blog Page**: users can like/post/comment (after reviewed by admin) and admins can post pictures/videos/text/audio for post
+- **Add calendly (schedule a meeting w/ me)
 - **Add Promo Video**: Shows footage of me coding, exercising, publicly speaking, leading, hobbies, family (drag down to see video)
 - **Add Life Card**: Showcases life outside of school (surf, run, ski, etc.)
 - **Add AI Chatbot**: User can ask chatbot questions about professional experience and website
