@@ -1,5 +1,5 @@
 import React from "react";
-import { base44 } from "@/api/base44Client";
+import { mClient } from "@/api/mockClient";
 import { useQuery } from "@tanstack/react-query";
 import { motion } from "framer-motion";
 import { CheckCircle2, Circle, Target, TrendingUp } from "lucide-react";
@@ -8,13 +8,13 @@ import { Progress } from "@/components/ui/progress";
 export default function BucketListSection() {
   const { data: yearlyGoals, isLoading: goalsLoading } = useQuery({
     queryKey: ["yearlyGoals"],
-    queryFn: () => base44.entities.YearlyGoal.list("-year"),
+    queryFn: () => mClient.entities.YearlyGoal.list("-year"),
     initialData: [],
   });
 
   const { data: bucketList, isLoading: bucketLoading } = useQuery({
     queryKey: ["bucketList"],
-    queryFn: () => base44.entities.BucketListItem.list(),
+    queryFn: () => mClient.entities.BucketListItem.list(),
     initialData: [],
   });
 
