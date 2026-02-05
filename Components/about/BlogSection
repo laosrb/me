@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { base44 } from "@/api/base44Client";
+import { mClient } from "@/api/mockClient";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { motion } from "framer-motion";
 import { format } from "date-fns";
@@ -20,20 +20,20 @@ export default function BlogSection() {
 
   const { data: posts, isLoading } = useQuery({
     queryKey: ["blogPosts"],
-    queryFn: () => base44.entities.BlogPost.list("-created_date"),
+    queryFn: () => mClient.entities.BlogPost.list("-created_date"),
     initialData: [],
   });
 
   const { data: currentUser } = useQuery({
     queryKey: ["currentUser"],
-    queryFn: () => base44.auth.me(),
+    queryFn: () => mClient.auth.me(),
     onSuccess: (user) => {
       setIsAdmin(user?.role === "admin");
     },
   });
 
   const createMutation = useMutation({
-    mutationFn: (data) => base44.entities.BlogPost.create({
+    mutationFn: (data) => mClient.entities.BlogPost.create({
       ...data,
       published_date: new Date().toISOString()
     }),
@@ -45,7 +45,7 @@ export default function BlogSection() {
   });
 
   const updateMutation = useMutation({
-    mutationFn: ({ id, data }) => base44.entities.BlogPost.update(id, data),
+    mutationFn: ({ id, data }) => mClient.entities.BlogPost.update(id, data),
     onSuccess: () => {
       queryClient.invalidateQueries(["blogPosts"]);
       setShowEditor(false);
