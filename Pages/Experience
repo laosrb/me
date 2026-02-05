@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { base44 } from "@/api/base44Client";
+import { mClient } from "@/api/mockClient";
 import { useQuery } from "@tanstack/react-query";
 import { motion } from "framer-motion";
 import { Briefcase, Calendar, Filter } from "lucide-react";
@@ -12,7 +12,7 @@ export default function Experience() {
 
   const { data: experiences, isLoading } = useQuery({
     queryKey: ["workExperience"],
-    queryFn: () => base44.entities.WorkExperience.list("-start_date"),
+    queryFn: () => mClient.entities.WorkExperience.list("-start_date"),
     initialData: [],
   });
 
